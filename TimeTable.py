@@ -14,7 +14,11 @@ buttonList = []
 
 
 def period_class_opener(k):
-    webbrowser.open_new(S7_CSE_links[k])
+    if k == 'NULL':
+        print("Error")
+    else:
+        webbrowser.open_new(S7_CSE_links[k])
+
 
 days = {
     "Mon": 0,
@@ -136,22 +140,28 @@ dayLabel4 = tk.Label(toolsFrame, text="Thu", font=("arial", dayFontSize), backgr
 dayLabel4.grid(row=4, column=0, pady=padinY)
 
 # MONDAY
-butM1 = tk.Button(toolsFrame, text=S7_CSE_tt[0][0], font=("arial", periodFontSize), command=lambda: period_class_opener(butM1.cget('text').split("\n")[0]))
+butM1 = tk.Button(toolsFrame, text=S7_CSE_tt[0][0], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butM1.cget('text').split("\n")[0]))
 butM1.grid(row=1, column=1, padx=padinX, sticky="nsew")
 
-butM2 = tk.Button(toolsFrame, text=S7_CSE_tt[0][1], font=("arial", periodFontSize))
+butM2 = tk.Button(toolsFrame, text=S7_CSE_tt[0][1], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butM2.cget('text').split("\n")[0]))
 butM2.grid(row=1, column=2, padx=padinX, sticky="nsew")
 
-butM3 = tk.Button(toolsFrame, text=S7_CSE_tt[0][2], font=("arial", periodFontSize))
+butM3 = tk.Button(toolsFrame, text=S7_CSE_tt[0][2], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butM3.cget('text').split("\n")[0]))
 butM3.grid(row=1, column=3, padx=padinX, sticky="nsew")
 
-butM4 = tk.Button(toolsFrame, text=S7_CSE_tt[0][3], font=("arial", periodFontSize))
+butM4 = tk.Button(toolsFrame, text=S7_CSE_tt[0][3], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butM4.cget('text').split("\n")[0]))
 butM4.grid(row=1, column=4, padx=padinX, sticky="nsew")
 
-butM5 = tk.Button(toolsFrame, text=S7_CSE_tt[0][4], font=("arial", periodFontSize))
+butM5 = tk.Button(toolsFrame, text=S7_CSE_tt[0][4], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butM5.cget('text').split("\n")[0]))
 butM5.grid(row=1, column=5, padx=padinX, sticky="nsew")
 
-butM6 = tk.Button(toolsFrame, text=S7_CSE_tt[0][5], font=("arial", periodFontSize))
+butM6 = tk.Button(toolsFrame, text=S7_CSE_tt[0][5], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butM6.cget('text').split("\n")[0]))
 butM6.grid(row=1, column=6, padx=padinX, sticky="nsew")
 
 buttonList.append(butM1)
@@ -162,16 +172,20 @@ buttonList.append(butM5)
 buttonList.append(butM6)
 
 # TUESDAY
-butTu1 = tk.Button(toolsFrame, text=S7_CSE_tt[1][0], font=("arial", periodFontSize))
+butTu1 = tk.Button(toolsFrame, text=S7_CSE_tt[1][0], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTu1.cget('text').split("\n")[0]))
 butTu1.grid(row=2, column=1, columnspan=3, padx=padinX, sticky="nsew")
 
-butTu2 = tk.Button(toolsFrame, text=S7_CSE_tt[1][3], font=("arial", periodFontSize))
+butTu2 = tk.Button(toolsFrame, text=S7_CSE_tt[1][3], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTu2.cget('text').split("\n")[0]))
 butTu2.grid(row=2, column=4, padx=padinX, sticky="nsew")
 
-butTu3 = tk.Button(toolsFrame, text=S7_CSE_tt[1][4], font=("arial", periodFontSize))
+butTu3 = tk.Button(toolsFrame, text=S7_CSE_tt[1][4], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTu3.cget('text').split("\n")[0]))
 butTu3.grid(row=2, column=5, padx=padinX, sticky="nsew")
 
-butTu4 = tk.Button(toolsFrame, text=S7_CSE_tt[1][5], font=("arial", periodFontSize))
+butTu4 = tk.Button(toolsFrame, text=S7_CSE_tt[1][5], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTu4.cget('text').split("\n")[0]))
 butTu4.grid(row=2, column=6, padx=padinX, sticky="nsew")
 
 buttonList.append(butTu1)
@@ -179,24 +193,29 @@ buttonList.append(butTu2)
 buttonList.append(butTu3)
 buttonList.append(butTu4)
 
-
 # WEDNESDAY
-butW1 = tk.Button(toolsFrame, text=S7_CSE_tt[2][0], font=("arial", periodFontSize))
+butW1 = tk.Button(toolsFrame, text=S7_CSE_tt[2][0], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butW1.cget('text').split("\n")[0]))
 butW1.grid(row=3, column=1, padx=padinX, sticky="nsew")
 
-butW2 = tk.Button(toolsFrame, text=S7_CSE_tt[2][1], font=("arial", periodFontSize))
+butW2 = tk.Button(toolsFrame, text=S7_CSE_tt[2][1], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butW2.cget('text').split("\n")[0]))
 butW2.grid(row=3, column=2, padx=padinX, sticky="nsew")
 
-butW3 = tk.Button(toolsFrame, text=S7_CSE_tt[2][2], font=("arial", periodFontSize))
+butW3 = tk.Button(toolsFrame, text=S7_CSE_tt[2][2], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butW3.cget('text').split("\n")[0]))
 butW3.grid(row=3, column=3, padx=padinX, sticky="nsew")
 
-butW4 = tk.Button(toolsFrame, text=S7_CSE_tt[2][3], font=("arial", periodFontSize))
+butW4 = tk.Button(toolsFrame, text=S7_CSE_tt[2][3], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butW4.cget('text').split("\n")[0]))
 butW4.grid(row=3, column=4, padx=padinX, sticky="nsew")
 
-butW5 = tk.Button(toolsFrame, text=S7_CSE_tt[2][4], font=("arial", periodFontSize))
+butW5 = tk.Button(toolsFrame, text=S7_CSE_tt[2][4], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butW5.cget('text').split("\n")[0]))
 butW5.grid(row=3, column=5, padx=padinX, sticky="nsew")
 
-butW6 = tk.Button(toolsFrame, text=S7_CSE_tt[2][5], font=("arial", periodFontSize))
+butW6 = tk.Button(toolsFrame, text=S7_CSE_tt[2][5], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butW6.cget('text').split("\n")[0]))
 butW6.grid(row=3, column=6, padx=padinX, sticky="nsew")
 
 buttonList.append(butW1)
@@ -207,16 +226,20 @@ buttonList.append(butW5)
 buttonList.append(butW6)
 
 # THURSDAY
-butTh1 = tk.Button(toolsFrame, text=S7_CSE_tt[3][0], font=("arial", periodFontSize))
+butTh1 = tk.Button(toolsFrame, text=S7_CSE_tt[3][0], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTh1.cget('text').split("\n")[0]))
 butTh1.grid(row=4, column=1, padx=padinX, sticky="nsew")
 
-butTh2 = tk.Button(toolsFrame, text=S7_CSE_tt[3][1], font=("arial", periodFontSize))
+butTh2 = tk.Button(toolsFrame, text=S7_CSE_tt[3][1], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTh2.cget('text').split("\n")[0]))
 butTh2.grid(row=4, column=2, padx=padinX, sticky="nsew")
 
-butTh3 = tk.Button(toolsFrame, text=S7_CSE_tt[3][2], font=("arial", periodFontSize))
+butTh3 = tk.Button(toolsFrame, text=S7_CSE_tt[3][2], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTh3.cget('text').split("\n")[0]))
 butTh3.grid(row=4, column=3, padx=padinX, sticky="nsew")
 
-butTh4 = tk.Button(toolsFrame, text=S7_CSE_tt[3][3], font=("arial", periodFontSize))
+butTh4 = tk.Button(toolsFrame, text=S7_CSE_tt[3][3], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butTh4.cget('text').split("\n")[0]))
 butTh4.grid(row=4, column=4, columnspan=3, padx=padinX, sticky="nsew")
 
 buttonList.append(butTh1)
@@ -254,22 +277,28 @@ timeLabelF6.grid(row=0, column=6, padx=padinX)
 dayLabel4 = tk.Label(toolsFrame1, text="Fri", font=("arial", dayFontSize), background="LightSteelBlue2")
 dayLabel4.grid(row=1, column=0, pady=padinY)
 
-butF1 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][0], font=("arial", periodFontSize))
+butF1 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][0], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butF1.cget('text').split("\n")[0]))
 butF1.grid(row=1, column=1, padx=padinX, sticky="nsew")
 
-butF2 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][1], font=("arial", periodFontSize))
+butF2 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][1], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butF2.cget('text').split("\n")[0]))
 butF2.grid(row=1, column=2, padx=padinX, sticky="nsew")
 
-butF3 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][2], font=("arial", periodFontSize))
+butF3 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][2], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butF3.cget('text').split("\n")[0]))
 butF3.grid(row=1, column=3, padx=padinX, sticky="nsew")
 
-butF4 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][3], font=("arial", periodFontSize))
+butF4 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][3], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butF4.cget('text').split("\n")[0]))
 butF4.grid(row=1, column=4, padx=padinX, sticky="nsew")
 
-butF5 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][4], font=("arial", periodFontSize))
+butF5 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][4], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butF5.cget('text').split("\n")[0]))
 butF5.grid(row=1, column=5, padx=padinX, sticky="nsew")
 
-butF6 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][5], font=("arial", periodFontSize))
+butF6 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][5], font=("arial", periodFontSize), command=lambda: period_class_opener
+(butF6.cget('text').split("\n")[0]))
 butF6.grid(row=1, column=6, padx=padinX, sticky="nsew")
 
 buttonList.append(butF1)
@@ -286,6 +315,5 @@ buttonList.append(butF6)
 for i in buttonList:
     textTemp = i.cget('text') + "\n" + "[" + S7_SubTeachers_Subjects.get(i.cget('text')) + "]"
     i['text'] = textTemp
-
 
 root.mainloop()
