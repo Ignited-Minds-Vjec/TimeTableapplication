@@ -61,15 +61,15 @@ S7_CSE_links = {
 
 S7_CSE_tt = [
     ["Ms. Jeethu", "Ms. Vidhya", "Ms. Asha", "Ms. Tintu", "Ms. Akhila", "Ms. Divya"],
-    ["NULL", "NULL", "NULL", "Ms. Divya", "Ms. Asha", "Ms. Akhila"],
+    ["Ms. Achala/Ms. Derroll", "Ms. Achala/Ms. Derroll", "Ms. Achala/Ms. Derroll", "Ms. Divya", "Ms. Asha", "Ms. Akhila"],
     ["Ms. Jeethu", "Ms. Asha", "Ms. Divya", "Ms. Tintu", "Ms. Akhila", "Ms. Tintu"],
-    ["Ms. Jeethu", "Ms. Tintu", "Ms. Divya", "NULL", "NULL", "NULL"],
-    ["NULL", "Ms. Vidhya", "Ms. Jeethu", "Ms. Asha", "Ms. Akhila", "Ms. Vidhya"]
+    ["Ms. Jeethu", "Ms. Tintu", "Ms. Divya", "Ms. Achala/Ms. Derroll", "Ms. Achala/Ms. Derroll", "Ms. Achala/Ms. Derroll"],
+    ["Ms. Achala/Ms. Derroll", "Ms. Vidhya", "Ms. Jeethu", "Ms. Asha", "Ms. Akhila", "Ms. Vidhya"]
 ]
 
 S7_SubTeachers_Subjects = {
     "Ms. Jeethu": "ML",
-    "NULL": "Lab/Seminar",
+    "Ms. Achala/Ms. Derroll": "Lab/Seminar",
     "Ms. Vidhya": "Crypto",
     "Ms. Tintu": "PP",
     "Ms. Akhila": "DC",

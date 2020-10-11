@@ -153,7 +153,7 @@ class StartPage(tk.Frame):
 
         # Combobox creation
         period = ttk.Combobox(self, width=27, values=
-        ('Ms. Divya', 'Ms. Jeethu', 'Ms. Akhila', 'Ms. Vidhya', 'Ms. Tintu', 'Ms. Asha', 'Ms. Derroll', 'Ms. Achala'))
+        ('Ms. Divya [CSA]', 'Ms. Jeethu [ML]', 'Ms. Akhila [DC]', 'Ms. Vidhya [Crypto]', 'Ms. Tintu [PP]', 'Ms. Asha [CG]', 'Ms. Derroll [Lab]', 'Ms. Achala [Seminar]'))
 
         period.current(0)
         period.pack(pady=5)
