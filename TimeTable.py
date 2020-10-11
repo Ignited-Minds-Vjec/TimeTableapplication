@@ -102,8 +102,8 @@ toolsFrame.configure(background="LightSteelBlue2")
 toolsFrame.grid(row=1, column=0, sticky="ew", pady=20)
 toolsFrame.grid_columnconfigure(1, weight=6)
 
-deptLabel = tk.Label(root, text="S7 CSE", font=("arial", 20))
-deptLabel.configure(background="LightSteelBlue2")
+deptLabel = tk.Label(root, text="S7 CSE", font=("arial", 19, "bold"))
+deptLabel.configure(background="LightSteelBlue3")
 deptLabel.grid(row=0, column=0)
 
 timeLabel0 = tk.Label(toolsFrame, text="      ", font=("arial", 15), background="LightSteelBlue2")
