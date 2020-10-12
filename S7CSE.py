@@ -96,8 +96,7 @@ class TimeTableApp(tk.Tk):
         l = t.split(" ")
         day = l[0]
         k = days[day]
-        now = l[4]
-
+        now = l[3]
         if day == "Sat" or day == "Sun":
             messagebox.showinfo("Error", "Classes NOT Available")
         elif day == "Fri":

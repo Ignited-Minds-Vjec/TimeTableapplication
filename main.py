@@ -45,7 +45,8 @@ tt = [
 ]
 periodCount = 6
 noOfDays = 5
-c = 0
+facultyCount = 8
+i = 0
 
 
 class TimeTableApp(tk.Tk):
@@ -54,7 +55,7 @@ class TimeTableApp(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
         container = tk.Frame(self)
 
-        container.pack(side="top", fill="both", expand=True)
+        # container.pack(side="top", fill="both", expand=True)
 
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
@@ -182,7 +183,7 @@ class DataPage_1(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global periodCount, noOfDays, c
+        global periodCount, noOfDays, facultyCount
         label1 = tk.Label(self, text="MY TIME",
                           foreground="red",
                           font=("Times New Roman", 15))
@@ -213,6 +214,16 @@ class DataPage_1(tk.Frame):
         Count.current(0)
         Count.pack(pady=5)
         periodCount = int(Count.get())
+
+        label5 = tk.Label(self, text="Enter the No of Total No of Faculty :",
+                          foreground="black",
+                          font=("Times New Roman", 10))
+        label5.pack()
+        FCount = ttk.Combobox(self, width=20, values=('1', '2', '3', '4', '5', '6', '7', '8', '9', '10'))
+
+        FCount.current(0)
+        FCount.pack(pady=5)
+        facultyCount = int(FCount.get())
         button1 = tk.Button(self, text="Set & Continue",
                             command=lambda: controller.show_frame(DataPage_2))
         button1.pack(pady=5)
@@ -226,8 +237,8 @@ class DataPage_2(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        global c, periodCount, noOfDays
-        c += 1
+        global periodCount, noOfDays, facultyCount,i
+
         label1 = tk.Label(self, text="MY TIME",
                           foreground="red",
                           font=("Times New Roman", 15))
@@ -238,36 +249,33 @@ class DataPage_2(tk.Frame):
                           font=("Times New Roman", 13))
         label2.pack()
 
-        label3 = tk.Label(self, text="Enter the Timing 24 hrs:",
+        label3 = tk.Label(self, text="Enter the Timing of " +str(i+1)+" :",
                           foreground="black",
                           font=("Times New Roman", 10))
         label3.pack()
 
-        Timeh = ttk.Combobox(self, width=20, values=())
-        Timem = ttk.Combobox(self, width=10, values=())
-        Timeh.current(0)
-        Timem.current(0)
-        Timeh.pack(pady=5)
-        Timem.pack(pady=5)
+        self.hourstr = tk.StringVar(self, '10')
+        self.hour = tk.Spinbox(self, from_=0, to=23, wrap=True, textvariable=self.hourstr, width=2, state="readonly")
+        self.minstr = tk.StringVar(self, '30')
+        self.minstr.trace("w", self.trace_var)
+        self.last_value = ""
+        self.min = tk.Spinbox(self, from_=0, to=59, wrap=True, textvariable=self.minstr, width=2, state="readonly")
+        self.hour.pack()
+        self.min.pack()
 
-        if c == periodCount:
-            label4 = tk.Label(self, text="Faculty Count or Subject Count :",
-                          foreground="black",
-                          font=("Times New Roman", 10))
-            label4.pack()
-
-            Count = ttk.Combobox(self, width=20, values=('1', '2', '3', '4', '5', '6', '7', '8'))
-
-            Count.current(0)
-            Count.pack(pady=5)
-
-        button1 = tk.Button(self, text="Set & Continue",
-                            command=lambda: controller.read_data(Days.get(), Count.get()))
-        button1.pack(pady=5)
-
+        if i <= periodCount:
+            button1 = tk.Button(self, text="Set & Continue",
+                            command=lambda: controller.show_frame(DataPage_2))
+            button1.pack(pady=5)
+        i += 1
         button2 = tk.Button(self, text="Exit",
                             command=lambda: controller.destroy_frame())
         button2.pack(pady=5)
+
+    def trace_var(self, *args):
+        if self.last_value == "59" and self.minstr.get() == "0":
+            self.hourstr.set(int(self.hourstr.get()) + 1 if self.hourstr.get() != "23" else 0)
+        self.last_value = self.minstr.get()
 
 
 app = TimeTableApp()
