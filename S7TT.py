@@ -4,6 +4,9 @@ from tkinter import messagebox
 import time
 import webbrowser
 
+frameBackgroundColour = "snow3"
+labelBackgroundColour = "snow3"
+
 days = {
     "Mon": 0,
     "Tue": 1,
@@ -95,10 +98,12 @@ def period_class(k, root):
         label.grid(row=0, column=0, columnspan=2, sticky="nsew", padx=80)
         label.grid_columnconfigure(2)
 
-        button1 = tk.Button(msgBox, text="Seminar", command=lambda: lab_seminar_selection("Ms. Achala [Seminar]", root,msgBox))
+        button1 = tk.Button(msgBox, text="Seminar",
+                            command=lambda: lab_seminar_selection("Ms. Achala [Seminar]", root, msgBox))
         button1.grid(row=1, column=0, sticky="nsew", padx=20, pady=10)
 
-        button2 = tk.Button(msgBox, text="Lab", command=lambda: lab_seminar_selection("Ms. Derroll [Lab]", root, msgBox))
+        button2 = tk.Button(msgBox, text="Lab",
+                            command=lambda: lab_seminar_selection("Ms. Derroll [Lab]", root, msgBox))
         button2.grid(row=1, column=1, sticky="nsew", padx=20, pady=10)
         msgBox.mainloop()
     else:
@@ -359,11 +364,10 @@ class TimeTableApp(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         container = tk.Frame(self)
-
         container.pack(side="top", fill="both", expand=True)
 
         container.grid_rowconfigure(0, weight=1)
-        container.grid_columnconfigure(0, weight=1)
+        container.grid_columnconfigure(1, weight=1)
 
         self.frames = {}
 
@@ -428,70 +432,80 @@ class StartPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-
+        tk.Frame.config(self, background=frameBackgroundColour)
         label1 = tk.Label(self, text="S7 CSE VJEC",
                           foreground="red",
-                          font=("Times New Roman", 15))
-        label1.pack(padx=50, pady=10)
+                          font=("Times New Roman", 15)
+                          , background=labelBackgroundColour)
+        label1.grid(row=0, column=0, pady=10, columnspan=3)
 
         label2 = tk.Label(self, text="Time Table",
                           foreground="red",
-                          font=("Times New Roman", 12))
-        label2.pack(padx=50, pady=5)
+                          font=("Times New Roman", 12)
+                          , background=labelBackgroundColour)
+        label2.grid(row=1, column=0, pady=5, columnspan=3)
 
-        label3 = tk.Label(self, text="Select Your Period :", font=("Times New Roman", 10))
-        label3.pack(pady=5)
+        label3 = tk.Label(self, text="Select Your Period :",
+                          font=("Times New Roman", 11),
+                          background=labelBackgroundColour)
+        label3.grid(row=2, column=0, columnspan=3, pady=5)
 
         # Combobox creation
-        period = ttk.Combobox(self, width=27, values=
+        period = ttk.Combobox(self, width=19,
+                              state="readonly",
+                              values=
         ('Ms. Divya [CSA]', 'Ms. Jeethu [ML]', 'Ms. Akhila [DC]', 'Ms. Vidhya [Crypto]', 'Ms. Tintu [PP]',
          'Ms. Asha [CG]', 'Ms. Derroll [Lab]', 'Ms. Achala [Seminar]'))
 
         period.current(0)
-        period.pack(pady=5)
+        period.grid(row=3, column=0, pady=5, columnspan=2, padx=9)
 
-        btn1 = tk.Button(self, text='Join Now', bd='5', command=lambda: controller.periodClassOpener(period.get()))
-        btn1.pack(padx=10, pady=10)
+        btn1 = tk.Button(self, text='Join Now',
+                         command=lambda: controller.periodClassOpener(period.get()))
+        btn1.grid(row=3, column=2, pady=5)
 
-        btn2 = tk.Button(self, text='Immediate Join', bd='5', command=lambda: controller.periodNowOpener())
-        btn2.pack(padx=10, pady=10)
+        btn2 = tk.Button(self, text='Immediate Join',
+                         bd='3',
+                         command=lambda: controller.periodNowOpener())
+        btn2.grid(row=4, column=0, pady=7, columnspan=3, sticky="nsew", padx=20)
+
+        button3 = tk.Button(self, text="TimeTable",
+                            command=show_timtable)
+        button3.grid(row=5, column=0, pady=7, columnspan=3)
 
         button = tk.Button(self, text="Developers",
                            command=lambda: controller.show_frame(Developer))
-        button.pack(pady=5)
-
-        button3 = tk.Button(self, text="TimeTable", command=show_timtable)
-        button3.pack(pady=5)
-
-        button2 = tk.Button(self, text="Exit",
-                            command=lambda: controller.destroy_frame())
-        button2.pack(pady=5)
+        button.grid(row=6, column=0, pady=7, columnspan=3)
 
 
 class Developer(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-
+        tk.Frame.config(self, background=frameBackgroundColour)
         label1 = tk.Label(self, text="S7 CSE VJEC",
                           foreground="red",
-                          font=("Times New Roman", 15))
+                          font=("Times New Roman", 15),
+                          background=labelBackgroundColour)
         label1.pack(padx=50, pady=10)
 
         label2 = tk.Label(self, text="Time Table App\nDevelopers",
                           foreground="red",
-                          font=("Times New Roman", 13))
+                          font=("Times New Roman", 13),
+                          background=labelBackgroundColour)
         label2.pack()
 
         label3 = tk.Label(self, text="Adila Farha P K\nNathasha K V\n(S3 CSE B)\nArchana A\nAromal Joseph K M\nAgin "
                                      "Chandran\n(S7CSE)",
                           foreground="green",
-                          font=("Times New Roman", 10))
+                          font=("Times New Roman", 10),
+                          background=labelBackgroundColour)
         label3.pack()
 
         label4 = tk.Label(self, text="Special Thanks to:\nTeam Ignited Minds",
                           foreground="red",
-                          font=("Times New Roman", 10))
+                          font=("Times New Roman", 10),
+                          background=labelBackgroundColour)
         label4.pack()
 
         button1 = tk.Button(self, text="Back to Home",

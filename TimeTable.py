@@ -12,8 +12,6 @@ buttonList = []
 
 def period_class_opener(k):
     if k.split()[1] == 'Achala/Ms.':
-        print(k.split()[1])
-        # tk.messagebox.showinfo("Not Available", "Choose options from Main Menu")
         msgBox = tk.Tk()
         msgBox.geometry("300x80")
         msgBox.resizable(False, False)
