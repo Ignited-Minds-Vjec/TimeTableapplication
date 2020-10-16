@@ -83,10 +83,11 @@ def get_key(val):
 def lab_seminar_selection(name, root1, root2):
     webbrowser.open_new(S7_CSE_links[name])
     root1.destroy()
-    root2.destroy()
+    if root2 is not None:
+        root2.destroy()
 
 
-def period_class(k, root):
+def period_class(k, root=None):
     if k.split()[1] == 'Achala/Ms.':
         print(k.split()[1])
         # tk.messagebox.showinfo("Not Available", "Choose options from Main Menu")
@@ -99,11 +100,11 @@ def period_class(k, root):
         label.grid_columnconfigure(2)
 
         button1 = tk.Button(msgBox, text="Seminar",
-                            command=lambda: lab_seminar_selection("Ms. Achala [Seminar]", root, msgBox))
+                            command=lambda: lab_seminar_selection("Ms. Achala [Seminar]", msgBox, root))
         button1.grid(row=1, column=0, sticky="nsew", padx=20, pady=10)
 
         button2 = tk.Button(msgBox, text="Lab",
-                            command=lambda: lab_seminar_selection("Ms. Derroll [Lab]", root, msgBox))
+                            command=lambda: lab_seminar_selection("Ms. Derroll [Lab]", msgBox, root))
         button2.grid(row=1, column=1, sticky="nsew", padx=20, pady=10)
         msgBox.mainloop()
     else:
@@ -403,12 +404,12 @@ class TimeTableApp(tk.Tk):
                 if atl <= now < ath:
                     flag = 1
                     classes = S7_CSE_tt[k][i]
-                    if classes == "NULL":
-                        messagebox.showinfo("Error", "Multiple Options available")
+                    if classes == "Ms. Achala/Ms. Derroll [Seminar/Lab]":
+                        period_class(classes)
                     else:
                         webbrowser.open_new(S7_CSE_links[classes])
             if flag == 0:
-                messagebox.showinfo("Error", "Classes NOT Available/\n Multiple Options available")
+                messagebox.showinfo("Error", "Classes NOT Available")
         else:
             flag = 0
             for i in range(6):
@@ -417,12 +418,12 @@ class TimeTableApp(tk.Tk):
                 if atl <= now < ath:
                     flag = 1
                     classes = S7_CSE_tt[k][i]
-                    if classes == "NULL":
-                        messagebox.showinfo("Error", "Multiple Options available\nUse Dropdown")
+                    if classes == "Ms. Achala/Ms. Derroll [Seminar/Lab]":
+                        period_class(classes)
                     else:
                         webbrowser.open_new(S7_CSE_links[classes])
             if flag == 0:
-                messagebox.showinfo("Error", "Classes NOT Available/\n Multiple Options available")
+                messagebox.showinfo("Error", "Classes NOT Available")
 
     def destroy_frame(self):
         self.destroy()
