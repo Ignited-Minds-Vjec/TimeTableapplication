@@ -77,11 +77,30 @@ def get_key(val):
             return key
 
 
+def lab_seminar_selection(name, root1, root2):
+    webbrowser.open_new(S7_CSE_links[name])
+    root1.destroy()
+    root2.destroy()
+
+
 def period_class(k, root):
     if k.split()[1] == 'Achala/Ms.':
         print(k.split()[1])
-        tk.messagebox.showinfo("Not Available", "Choose options from Main Menu")
-        root.destroy()
+        # tk.messagebox.showinfo("Not Available", "Choose options from Main Menu")
+        msgBox = tk.Tk()
+        msgBox.geometry("300x80")
+        msgBox.resizable(False, False)
+        msgBox.configure(background="LightSteelBlue3")
+        label = tk.Label(msgBox, text="Choose the class", font=("arial", 13), background="LightSteelBlue3")
+        label.grid(row=0, column=0, columnspan=2, sticky="nsew", padx=80)
+        label.grid_columnconfigure(2)
+
+        button1 = tk.Button(msgBox, text="Seminar", command=lambda: lab_seminar_selection("Ms. Achala [Seminar]", root,msgBox))
+        button1.grid(row=1, column=0, sticky="nsew", padx=20, pady=10)
+
+        button2 = tk.Button(msgBox, text="Lab", command=lambda: lab_seminar_selection("Ms. Derroll [Lab]", root, msgBox))
+        button2.grid(row=1, column=1, sticky="nsew", padx=20, pady=10)
+        msgBox.mainloop()
     else:
         teacherName = k.split()[0] + " " + k.split()[1] + " " + k.split()[2]
         webbrowser.open_new(S7_CSE_links[teacherName])
