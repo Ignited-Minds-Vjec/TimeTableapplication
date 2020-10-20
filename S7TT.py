@@ -48,8 +48,8 @@ S7_CSE_links = {
 
 S7_CSE_tt = [
     ["Ms. Jeethu [ML]", "Ms. Vidhya [Crypto]", "Ms. Asha [CG]", "Ms. Tintu [PP]", "Ms. Akhila [DC]", "Ms. Divya [CSA]"],
-    ["Ms. Achala/Ms. Derroll [Seminar/Lab]", "Ms. Achala/Ms. Derroll  [Seminar/Lab]",
-     "Ms. Achala/Ms. Derroll  [Seminar/Lab]", "Ms. Divya [CSA]", "Ms. Asha [CG]", "Ms. Akhila [DC]"],
+    ["Ms. Achala/Ms. Derroll [Seminar/Lab]", "Ms. Achala/Ms. Derroll [Seminar/Lab]",
+     "Ms. Achala/Ms. Derroll [Seminar/Lab]", "Ms. Divya [CSA]", "Ms. Asha [CG]", "Ms. Akhila [DC]"],
     ["Ms. Jeethu [ML]", "Ms. Asha [CG]", "Ms. Divya [CSA]", "Ms. Tintu [PP]", "Ms. Akhila [DC]", "Ms. Tintu [PP]"],
     ["Ms. Jeethu [ML]", "Ms. Tintu [PP]", "Ms. Divya [CSA]", "Ms. Achala/Ms. Derroll  [Seminar/Lab]",
      "Ms. Achala/Ms. Derroll  [Seminar/Lab]", "Ms. Achala/Ms. Derroll  [Seminar/Lab]"],
