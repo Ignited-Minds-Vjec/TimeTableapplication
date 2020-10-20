@@ -425,9 +425,6 @@ class TimeTableApp(tk.Tk):
             if flag == 0:
                 messagebox.showinfo("Error", "Classes NOT Available")
 
-    def destroy_frame(self):
-        self.destroy()
-
 
 class StartPage(tk.Frame):
 
@@ -436,14 +433,14 @@ class StartPage(tk.Frame):
         tk.Frame.config(self, background=frameBackgroundColour)
         label1 = tk.Label(self, text="S7 CSE VJEC",
                           foreground="red",
-                          font=("Times New Roman", 15)
-                          , background=labelBackgroundColour)
+                          font=("Times New Roman", 15),
+                          background=labelBackgroundColour)
         label1.grid(row=0, column=0, pady=10, columnspan=3)
 
         label2 = tk.Label(self, text="Time Table",
                           foreground="red",
-                          font=("Times New Roman", 12)
-                          , background=labelBackgroundColour)
+                          font=("Times New Roman", 12),
+                          background=labelBackgroundColour)
         label2.grid(row=1, column=0, pady=5, columnspan=3)
 
         label3 = tk.Label(self, text="Select Your Period :",
@@ -455,8 +452,9 @@ class StartPage(tk.Frame):
         period = ttk.Combobox(self, width=19,
                               state="readonly",
                               values=
-        ('Ms. Divya [CSA]', 'Ms. Jeethu [ML]', 'Ms. Akhila [DC]', 'Ms. Vidhya [Crypto]', 'Ms. Tintu [PP]',
-         'Ms. Asha [CG]', 'Ms. Derroll [Lab]', 'Ms. Achala [Seminar]'))
+                              ('Ms. Divya [CSA]', 'Ms. Jeethu [ML]', 'Ms. Akhila [DC]', 'Ms. Vidhya [Crypto]',
+                               'Ms. Tintu [PP]',
+                               'Ms. Asha [CG]', 'Ms. Derroll [Lab]', 'Ms. Achala [Seminar]'))
 
         period.current(0)
         period.grid(row=3, column=0, pady=5, columnspan=2, padx=9)
@@ -512,10 +510,6 @@ class Developer(tk.Frame):
         button1 = tk.Button(self, text="Back to Home",
                             command=lambda: controller.show_frame(StartPage))
         button1.pack(pady=5)
-
-        button2 = tk.Button(self, text="Exit",
-                            command=lambda: controller.destroy_frame())
-        button2.pack(pady=5)
 
 
 app = TimeTableApp()
