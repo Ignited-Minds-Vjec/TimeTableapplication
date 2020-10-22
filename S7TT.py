@@ -51,8 +51,8 @@ S7_CSE_tt = [
     ["Ms. Achala/Ms. Derroll [Seminar/Lab]", "Ms. Achala/Ms. Derroll [Seminar/Lab]",
      "Ms. Achala/Ms. Derroll [Seminar/Lab]", "Ms. Divya [CSA]", "Ms. Asha [CG]", "Ms. Akhila [DC]"],
     ["Ms. Jeethu [ML]", "Ms. Asha [CG]", "Ms. Divya [CSA]", "Ms. Tintu [PP]", "Ms. Akhila [DC]", "Ms. Tintu [PP]"],
-    ["Ms. Jeethu [ML]", "Ms. Tintu [PP]", "Ms. Divya [CSA]", "Ms. Achala/Ms. Derroll  [Seminar/Lab]",
-     "Ms. Achala/Ms. Derroll  [Seminar/Lab]", "Ms. Achala/Ms. Derroll  [Seminar/Lab]"],
+    ["Ms. Jeethu [ML]", "Ms. Tintu [PP]", "Ms. Divya [CSA]", "Ms. Achala/Ms. Derroll [Seminar/Lab]",
+     "Ms. Achala/Ms. Derroll [Seminar/Lab]", "Ms. Achala/Ms. Derroll [Seminar/Lab]"],
     ["Ms. Achala/Ms. Derroll [Seminar/Lab]", "Ms. Vidhya [Crypto]", "Ms. Jeethu [ML]", "Ms. Asha [CG]",
      "Ms. Akhila [DC]", "Ms. Vidhya [Crypto]"]
 ]
