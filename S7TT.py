@@ -68,6 +68,17 @@ S7_SubTeachers_Subjects = {
 }
 
 
+def joining_class(msg):
+    joining_info = tk.Tk()
+    joining_info.geometry("300x75")
+    joining_info.resizable(False, False)
+    joining_info.title("Joining Info")
+    label = tk.Label(joining_info, text="Joining: "+msg, font=("arial", 13, "bold"))
+    label.pack(padx=20, pady=20)
+    joining_info.after(2000, joining_info.destroy)
+    joining_info.mainloop()
+
+
 def get_keyFriday(val):
     for key, value in friTiming.items():
         if val == value:
@@ -83,6 +94,7 @@ def get_key(val):
 def lab_seminar_selection(name, root1, root2):
     webbrowser.open_new(S7_CSE_links[name])
     root1.destroy()
+    joining_class(name)
     if root2 is not None:
         root2.destroy()
 
@@ -110,6 +122,7 @@ def period_class(k, root=None):
     else:
         teacherName = k.split()[0] + " " + k.split()[1] + " " + k.split()[2]
         webbrowser.open_new(S7_CSE_links[teacherName])
+        joining_class(teacherName)
 
 
 def show_timtable():
@@ -383,10 +396,12 @@ class TimeTableApp(tk.Tk):
         frame = self.frames[cont]
         frame.tkraise()
 
+    '''
     @staticmethod
     def periodClassOpener(k):
         webbrowser.open_new(S7_CSE_links[k])
-
+        messagebox.showinfo("Class", "Joining: "+k)
+    '''
     @staticmethod
     def periodNowOpener():
         t = time.ctime()
@@ -404,10 +419,7 @@ class TimeTableApp(tk.Tk):
                 if atl <= now < ath:
                     flag = 1
                     classes = S7_CSE_tt[k][i]
-                    if classes == "Ms. Achala/Ms. Derroll [Seminar/Lab]":
-                        period_class(classes)
-                    else:
-                        webbrowser.open_new(S7_CSE_links[classes])
+                    period_class(classes)
             if flag == 0:
                 messagebox.showinfo("Error", "Classes NOT Available")
         else:
@@ -418,10 +430,7 @@ class TimeTableApp(tk.Tk):
                 if atl <= now < ath:
                     flag = 1
                     classes = S7_CSE_tt[k][i]
-                    if classes == "Ms. Achala/Ms. Derroll [Seminar/Lab]":
-                        period_class(classes)
-                    else:
-                        webbrowser.open_new(S7_CSE_links[classes])
+                    period_class(classes)
             if flag == 0:
                 messagebox.showinfo("Error", "Classes NOT Available")
 
@@ -460,7 +469,7 @@ class StartPage(tk.Frame):
         period.grid(row=3, column=0, pady=5, columnspan=2, padx=9)
 
         btn1 = tk.Button(self, text='Join Now',
-                         command=lambda: controller.periodClassOpener(period.get()))
+                         command=lambda: period_class(period.get()))
         btn1.grid(row=3, column=2, pady=5)
 
         btn2 = tk.Button(self, text='Immediate Join',
