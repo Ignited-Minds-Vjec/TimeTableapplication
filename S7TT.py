@@ -520,6 +520,10 @@ class Developer(tk.Frame):
                             command=lambda: controller.show_frame(StartPage))
         button1.pack(pady=5)
 
+        button2 = tk.Button(self, text="Exit",
+                            command=lambda: controller.destroy_frame())
+        button2.pack(pady=5)
+
 
 app = TimeTableApp()
 app.mainloop()
