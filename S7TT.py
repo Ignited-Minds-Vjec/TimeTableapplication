@@ -405,7 +405,7 @@ class TimeTableApp(tk.Tk):
     @staticmethod
     def periodNowOpener():
         t = time.ctime()
-        l = t.split(" ")
+        l = t.split()
         day = l[0]
         k = days[day]
         now = l[3]
