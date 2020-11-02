@@ -263,21 +263,6 @@ def show_timtable():
             j += span
         else:
             j += 1
-
-    '''
-
-    # Subject name allocation
-    for i in buttonList:
-        # print(i.cget('text'))
-        temp = i.cget('text').split()
-        if temp[1] + "" == "Achala/Ms.":
-            textTemp = temp[0] + " " + temp[1] + " " + temp[2]  # temp[2] holds derroll
-            textTemp = textTemp + '\n' + "[" + S7_SubTeachers_Subjects.get(textTemp) + "]"
-        else:
-            textTemp = temp[0] + " " + temp[1]
-            textTemp = textTemp + '\n' + "[" + S7_SubTeachers_Subjects.get(textTemp + " " + temp[2]) + "]"
-        i['text'] = textTemp
-    '''
     root.mainloop()
 
 
