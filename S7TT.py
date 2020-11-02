@@ -79,6 +79,19 @@ def joining_class(msg):
     joining_info.mainloop()
 
 
+def edit_timetable():
+    edit = tk.Tk()
+    edit.geometry("300x300")
+    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    dayLabel = tk.Label(edit, text="Choose day:", font=("arial", 13))
+    dayLabel.grid(row=0, column=0, pady=5, padx=5)
+    weekdays_comboBox = ttk.Combobox(edit, width=15, font=("arial", 10),
+                                     state="readonly",
+                                     values=weekdays)
+    weekdays_comboBox.grid(row=0, column=1, padx=5)
+    edit.mainloop()
+
+
 def get_keyFriday(val):
     for key, value in friTiming.items():
         if val == value:
@@ -378,6 +391,9 @@ class StartPage(tk.Frame):
         button = tk.Button(self, text="Developers",
                            command=lambda: controller.show_frame(Developer))
         button.grid(row=6, column=0, pady=7, columnspan=3)
+
+        # button_edit = tk.Button(self, text="Edit", command=edit_timetable)
+        # button_edit.grid(row=7, column=2)
 
 
 class Developer(tk.Frame):
