@@ -73,7 +73,7 @@ def joining_class(msg):
     joining_info.geometry("300x75")
     joining_info.resizable(False, False)
     joining_info.title("Joining Info")
-    label = tk.Label(joining_info, text="Joining: "+msg, font=("arial", 13, "bold"))
+    label = tk.Label(joining_info, text="Joining: " + msg, font=("arial", 13, "bold"))
     label.pack(padx=20, pady=20)
     joining_info.after(2000, joining_info.destroy)
     joining_info.mainloop()
@@ -89,6 +89,14 @@ def get_key(val):
     for key, value in allTiming.items():
         if val == value:
             return key
+
+
+def button_value(val):
+    val = val.split()
+    if val[1] == 'Achala/Ms.':
+        return val[0] + " " + val[1] + " " + val[2] + "\n" + val[3]
+    else:
+        return val[0] + " " + val[1] + '\n' + val[2]
 
 
 def lab_seminar_selection(name, root1, root2):
@@ -129,8 +137,6 @@ def show_timtable():
     timeFontSize = 12
     dayFontSize = 13
     periodFontSize = 8
-
-    buttonList = []
 
     root = tk.Tk()
     root.geometry("700x350")
@@ -181,113 +187,27 @@ def show_timtable():
     dayLabel4 = tk.Label(toolsFrame, text="Thu", font=("arial", dayFontSize), background="LightSteelBlue2")
     dayLabel4.grid(row=4, column=0, pady=5)
 
-    # MONDAY
-    butM1 = tk.Button(toolsFrame, text=S7_CSE_tt[0][0], font=("arial", periodFontSize),
-                      command=lambda: period_class(butM1.cget('text'), root))
-    butM1.grid(row=1, column=1, padx=5, sticky="nsew")
-
-    butM2 = tk.Button(toolsFrame, text=S7_CSE_tt[0][1], font=("arial", periodFontSize),
-                      command=lambda: period_class(butM2.cget('text'), root))
-    butM2.grid(row=1, column=2, padx=5, sticky="nsew")
-
-    butM3 = tk.Button(toolsFrame, text=S7_CSE_tt[0][2], font=("arial", periodFontSize),
-                      command=lambda: period_class(butM3.cget('text'), root))
-    butM3.grid(row=1, column=3, padx=5, sticky="nsew")
-
-    butM4 = tk.Button(toolsFrame, text=S7_CSE_tt[0][3], font=("arial", periodFontSize),
-                      command=lambda: period_class(butM4.cget('text'), root))
-    butM4.grid(row=1, column=4, padx=5, sticky="nsew")
-
-    butM5 = tk.Button(toolsFrame, text=S7_CSE_tt[0][4], font=("arial", periodFontSize),
-                      command=lambda: period_class(butM5.cget('text'), root))
-    butM5.grid(row=1, column=5, padx=5, sticky="nsew")
-
-    butM6 = tk.Button(toolsFrame, text=S7_CSE_tt[0][5], font=("arial", periodFontSize),
-                      command=lambda: period_class(butM6.cget('text'), root))
-    butM6.grid(row=1, column=6, padx=5, sticky="nsew")
-
-    buttonList.append(butM1)
-    buttonList.append(butM2)
-    buttonList.append(butM3)
-    buttonList.append(butM4)
-    buttonList.append(butM5)
-    buttonList.append(butM6)
-
-    # TUESDAY
-    butTu1 = tk.Button(toolsFrame, text=S7_CSE_tt[1][0], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTu1.cget('text'), root))
-    butTu1.grid(row=2, column=1, columnspan=3, padx=5, sticky="nsew")
-
-    butTu2 = tk.Button(toolsFrame, text=S7_CSE_tt[1][3], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTu2.cget('text'), root))
-    butTu2.grid(row=2, column=4, padx=5, sticky="nsew")
-
-    butTu3 = tk.Button(toolsFrame, text=S7_CSE_tt[1][4], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTu3.cget('text'), root))
-    butTu3.grid(row=2, column=5, padx=5, sticky="nsew")
-
-    butTu4 = tk.Button(toolsFrame, text=S7_CSE_tt[1][5], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTu4.cget('text'), root))
-    butTu4.grid(row=2, column=6, padx=5, sticky="nsew")
-
-    buttonList.append(butTu1)
-    buttonList.append(butTu2)
-    buttonList.append(butTu3)
-    buttonList.append(butTu4)
-
-    # WEDNESDAY
-    butW1 = tk.Button(toolsFrame, text=S7_CSE_tt[2][0], font=("arial", periodFontSize),
-                      command=lambda: period_class(butW1.cget('text'), root))
-    butW1.grid(row=3, column=1, padx=5, sticky="nsew")
-
-    butW2 = tk.Button(toolsFrame, text=S7_CSE_tt[2][1], font=("arial", periodFontSize),
-                      command=lambda: period_class(butW2.cget('text'), root))
-    butW2.grid(row=3, column=2, padx=5, sticky="nsew")
-
-    butW3 = tk.Button(toolsFrame, text=S7_CSE_tt[2][2], font=("arial", periodFontSize),
-                      command=lambda: period_class(butW3.cget('text'), root))
-    butW3.grid(row=3, column=3, padx=5, sticky="nsew")
-
-    butW4 = tk.Button(toolsFrame, text=S7_CSE_tt[2][3], font=("arial", periodFontSize),
-                      command=lambda: period_class(butW4.cget('text'), root))
-    butW4.grid(row=3, column=4, padx=5, sticky="nsew")
-
-    butW5 = tk.Button(toolsFrame, text=S7_CSE_tt[2][4], font=("arial", periodFontSize),
-                      command=lambda: period_class(butW5.cget('text'), root))
-    butW5.grid(row=3, column=5, padx=5, sticky="nsew")
-
-    butW6 = tk.Button(toolsFrame, text=S7_CSE_tt[2][5], font=("arial", periodFontSize),
-                      command=lambda: period_class(butW6.cget('text'), root))
-    butW6.grid(row=3, column=6, padx=5, sticky="nsew")
-
-    buttonList.append(butW1)
-    buttonList.append(butW2)
-    buttonList.append(butW3)
-    buttonList.append(butW4)
-    buttonList.append(butW5)
-    buttonList.append(butW6)
-
-    # THURSDAY
-    butTh1 = tk.Button(toolsFrame, text=S7_CSE_tt[3][0], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTh1.cget('text'), root))
-    butTh1.grid(row=4, column=1, padx=5, sticky="nsew")
-
-    butTh2 = tk.Button(toolsFrame, text=S7_CSE_tt[3][1], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTh2.cget('text'), root))
-    butTh2.grid(row=4, column=2, padx=5, sticky="nsew")
-
-    butTh3 = tk.Button(toolsFrame, text=S7_CSE_tt[3][2], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTh3.cget('text'), root))
-    butTh3.grid(row=4, column=3, padx=5, sticky="nsew")
-
-    butTh4 = tk.Button(toolsFrame, text=S7_CSE_tt[3][3], font=("arial", periodFontSize),
-                       command=lambda: period_class(butTh4.cget('text'), root))
-    butTh4.grid(row=4, column=4, columnspan=3, padx=5, sticky="nsew")
-
-    buttonList.append(butTh1)
-    buttonList.append(butTh2)
-    buttonList.append(butTh3)
-    buttonList.append(butTh4)
+    k = 0
+    i = 0
+    while i < len(S7_CSE_tt) - 1:
+        j = 0
+        while j < len(S7_CSE_tt[i]):
+            span = 1
+            for k in range(j, len(S7_CSE_tt[i]) - 1):
+                if S7_CSE_tt[i][k] == S7_CSE_tt[i][k + 1]:
+                    span += 1
+                else:
+                    break
+            button = tk.Button(toolsFrame,
+                               text=button_value(S7_CSE_tt[i][j]),
+                               font=("arial", periodFontSize),
+                               command=lambda number=S7_CSE_tt[i][j]: period_class(number))
+            button.grid(row=i + 1, column=j + 1, columnspan=span, padx=5, sticky="nsew")
+            if j != k and (j != len(S7_CSE_tt[i]) - 1):
+                j += span
+            else:
+                j += 1
+        i += 1
 
     # Friday
     toolsFrame1 = tk.Frame(root)
@@ -325,38 +245,26 @@ def show_timtable():
     dayLabel4 = tk.Label(toolsFrame1, text="Fri", font=("arial", dayFontSize), background="LightSteelBlue2")
     dayLabel4.grid(row=1, column=0, pady=5)
 
-    butF1 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][0], font=("arial", periodFontSize),
-                      command=lambda: period_class(butF1.cget('text'), root))
-    butF1.grid(row=1, column=1, padx=5, sticky="nsew")
+    k = 0
+    j = 0
+    while j < len(S7_CSE_tt[4]):
+        span = 1
+        for k in range(j, len(S7_CSE_tt[4]) - 1):
+            if S7_CSE_tt[4][k] == S7_CSE_tt[4][k + 1]:
+                span += 1
+            else:
+                break
+        button = tk.Button(toolsFrame1,
+                           text=button_value(S7_CSE_tt[4][j]),
+                           font=("arial", periodFontSize),
+                           command=lambda number=S7_CSE_tt[4][j]: period_class(number))
+        button.grid(row=1, column=j + 1, columnspan=span, padx=10, sticky="nsew")
+        if j != k and (j != len(S7_CSE_tt[4]) - 1):
+            j += span
+        else:
+            j += 1
 
-    butF2 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][1], font=("arial", periodFontSize),
-                      command=lambda: period_class(butF2.cget('text'), root))
-    butF2.grid(row=1, column=2, padx=5, sticky="nsew")
-
-    butF3 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][2], font=("arial", periodFontSize),
-                      command=lambda: period_class(butF3.cget('text'), root))
-    butF3.grid(row=1, column=3, padx=5, sticky="nsew")
-
-    butF4 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][3], font=("arial", periodFontSize),
-                      command=lambda: period_class(butF4.cget('text'), root))
-    butF4.grid(row=1, column=4, padx=5, sticky="nsew")
-
-    butF5 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][4], font=("arial", periodFontSize),
-                      command=lambda: period_class(butF5.cget('text'), root))
-    butF5.grid(row=1, column=5, padx=5, sticky="nsew")
-
-    butF6 = tk.Button(toolsFrame1, text=S7_CSE_tt[4][5], font=("arial", periodFontSize),
-                      command=lambda: period_class(butF6.cget('text'), root))
-    butF6.grid(row=1, column=6, padx=5, sticky="nsew")
-
-    buttonList.append(butF1)
-    buttonList.append(butF2)
-    buttonList.append(butF3)
-    buttonList.append(butF4)
-    buttonList.append(butF5)
-    buttonList.append(butF6)
-
-    # end of friday
+    '''
 
     # Subject name allocation
     for i in buttonList:
@@ -369,7 +277,7 @@ def show_timtable():
             textTemp = temp[0] + " " + temp[1]
             textTemp = textTemp + '\n' + "[" + S7_SubTeachers_Subjects.get(textTemp + " " + temp[2]) + "]"
         i['text'] = textTemp
-
+    '''
     root.mainloop()
 
 
@@ -402,6 +310,7 @@ class TimeTableApp(tk.Tk):
         webbrowser.open_new(S7_CSE_links[k])
         messagebox.showinfo("Class", "Joining: "+k)
     '''
+
     @staticmethod
     def periodNowOpener():
         t = time.ctime()
